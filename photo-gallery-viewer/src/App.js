@@ -88,9 +88,7 @@ function App() {
       />
       <button onClick={addImage}>Add Image</button>
       <br />
-      <br />
-      <br />
-
+      
       <WSPGallery galleryImages={galleryImages} />
     </div>
   );

@@ -104,3 +104,8 @@
 .btnNext {
   font-size: 3rem; /* Adjust the font size as needed */
 }
+
+.carouselImage {
+  cursor: pointer;
+  margin: 5px;
+}
