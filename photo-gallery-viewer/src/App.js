@@ -65,13 +65,13 @@ function App() {
     },
   ]);
 
-  const [imageUrl, setImageUrl] = useState(""); // State to hold the input URL
+  const [imageUrl, setImageUrl] = useState("");
 
   const addImage = () => {
     if (imageUrl) {
       setGalleryImages((prevImages) => [
         ...prevImages,
-        { img: imageUrl, name: "New Image" }, // Use default name if imageName is not provided
+        { img: imageUrl, name: "New Image" },
       ]);
       setImageUrl("");
     }
@@ -88,8 +88,11 @@ function App() {
       />
       <button onClick={addImage}>Add Image</button>
       <br />
-      
-      <WSPGallery galleryImages={galleryImages} />
+
+      <WSPGallery
+        galleryImages={galleryImages}
+        setGalleryImages={setGalleryImages}
+      />
     </div>
   );
 }

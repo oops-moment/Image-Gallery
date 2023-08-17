@@ -9,13 +9,19 @@ import {
   faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
-const WSPGallery = ({ galleryImages }) => {
+const WSPGallery = ({ galleryImages, setGalleryImages }) => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [openModal, setOpenModal] = useState(false);
 
   const handleOpenModal = (index) => {
     setSlideNumber(index);
     setOpenModal(true);
+  };
+
+  const handleEditName = (index, newName) => {
+    const updatedGalleryImages = [...galleryImages];
+    updatedGalleryImages[index].name = newName;
+    setGalleryImages(updatedGalleryImages);
   };
 
   const handleCloseModal = () => {
@@ -28,6 +34,10 @@ const WSPGallery = ({ galleryImages }) => {
     } else if (slideNumber === galleryImages.length - 1) {
       setSlideNumber(0);
     }
+  };
+  const handleInputClick = (e) => {
+    // Prevent the click event from reaching the parent div
+    e.stopPropagation();
   };
 
   const prevSlide = () => {
@@ -46,7 +56,6 @@ const WSPGallery = ({ galleryImages }) => {
         dynamicHeight={true}
         emulateTouch={true}
       >
-        {/* Carousel preview at the bottom */}
         {galleryImages.map((slide, index) => (
           <div
             className="carouselImage"
@@ -54,6 +63,12 @@ const WSPGallery = ({ galleryImages }) => {
             onClick={() => handleOpenModal(index)}
           >
             <img src={slide.img} alt="" />
+            <input
+              type="text"
+              value={slide.name}
+              onChange={(e) => handleEditName(index, e.target.value)}
+              onClick={handleInputClick}
+            />
           </div>
         ))}
       </Carousel>
@@ -80,7 +95,7 @@ const WSPGallery = ({ galleryImages }) => {
 
             <img src={galleryImages[slideNumber].img} alt="" />
             <p>{galleryImages[slideNumber].name}</p>
-          </div> 
+          </div>
         </div>
       )}
     </div>
