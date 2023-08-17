@@ -14,6 +14,26 @@ const WSPGallery = ({ galleryImages }) => {
     setSlideNumber(index);
     setOpenModal(true);
   };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
+
+  const nextSlide = () => {
+    if (slideNumber !== galleryImages.length - 1) {
+      setSlideNumber(slideNumber + 1);
+    } else if (slideNumber === galleryImages.length - 1) {
+      setSlideNumber(0);
+    }
+  };
+
+  const prevSlide = () => {
+    if (slideNumber !== 0) {
+      setSlideNumber(slideNumber - 1);
+    } else if (slideNumber === 0) {
+      setSlideNumber(galleryImages.length - 1);
+    }
+  };
   return (
     <div>
       {openModal && (
@@ -21,19 +41,19 @@ const WSPGallery = ({ galleryImages }) => {
           <FontAwesomeIcon
             icon={faCircleXmark}
             className="btnClose"
-            // onClick={handleCloseModal}
+            onClick={handleCloseModal}
           />
           <FontAwesomeIcon
             icon={faCircleChevronLeft}
             className="btnPrev"
-            // onClick={prevSlide}
+            onClick={prevSlide}
           />
           <FontAwesomeIcon
             icon={faCircleChevronRight}
             className="btnNext"
-            // onClick={nextSlide}
+            onClick={nextSlide}
           />
-          
+
           <div className="fullScreenImage">
             <img src={galleryImages[slideNumber].img} alt="" />
           </div>
