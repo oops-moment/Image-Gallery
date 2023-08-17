@@ -68,12 +68,18 @@
   transform: translateY(-50%);
   right: 40px;
 }
+/* WSPGallery.css */
+
+/* Styles for the photo viewer */
 .fullScreenImage {
   width: calc(100% - 40px);
   height: calc(100% - 40px);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 20px; /* Add margin for spacing */
+  box-sizing: border-box; /* Include padding and border in width and height */
+  position: relative; /* Position for overlay elements */
 }
 
 .fullScreenImage img {
@@ -99,6 +105,7 @@
   ); /* Adding a semi-transparent black background */
   padding: 5px 10px;
 }
+
 .btnClose,
 .btnPrev,
 .btnNext {
@@ -108,4 +115,11 @@
 .carouselImage {
   cursor: pointer;
   margin: 5px;
+  max-width: 800px; /* Adjust the maximum width as needed */
+  max-height: 800px; /* Adjust the maximum height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ccc; /* Add a border for better visibility */
+  margin: 0 auto; /* Center the carousel item horizontally */
 }

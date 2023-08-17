@@ -78,9 +78,9 @@ const WSPGallery = ({ galleryImages }) => {
               onClick={nextSlide}
             />
 
-            {/* <img src={galleryImages[slideNumber].img} alt="" />
-            <p>{galleryImages[slideNumber].name}</p> */}
-          </div>
+            <img src={galleryImages[slideNumber].img} alt="" />
+            <p>{galleryImages[slideNumber].name}</p>
+          </div> 
         </div>
       )}
     </div>
