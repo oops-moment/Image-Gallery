@@ -25,6 +25,10 @@ function App() {
   ];
   return (
     <div className="App">
+      <br />
+      <br />
+      <br />
+
       <WSPGallery galleryImages={galleryImages} />
     </div>
   );
