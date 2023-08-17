@@ -91,6 +91,16 @@
   left: 10px; /* Adjust as needed */
   font-weight: bold;
   color: white;
-  background-color: rgba(255, 225, 225, 0.7); /* Adding a semi-transparent black background */
+  background-color: rgba(
+    255,
+    225,
+    225,
+    0.7
+  ); /* Adding a semi-transparent black background */
   padding: 5px 10px;
+}
+.btnClose,
+.btnPrev,
+.btnNext {
+  font-size: 3rem; /* Adjust the font size as needed */
 }
