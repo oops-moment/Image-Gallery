@@ -123,3 +123,12 @@
   border: 2px solid #ccc; /* Add a border for better visibility */
   margin: 0 auto; /* Center the carousel item horizontally */
 }
+
+input[type="text"] {
+  padding: 10px;
+  margin-bottom: 10px; /* Add margin to create space below the input */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
