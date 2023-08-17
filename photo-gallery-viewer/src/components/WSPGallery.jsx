@@ -56,6 +56,7 @@ const WSPGallery = ({ galleryImages }) => {
 
           <div className="fullScreenImage">
             <img src={galleryImages[slideNumber].img} alt="" />
+            <p>{galleryImages[slideNumber].name}</p>
           </div>
         </div>
       )}
