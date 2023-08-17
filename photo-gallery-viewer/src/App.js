@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import WSPGallery from "./components/WSPGallery";
 
 function App() {
   const galleryImages = [
